@@ -5,7 +5,6 @@ import { getAuth } from 'firebase/auth';
 import { db } from '../firebase.config';
 import Spinner from '../components/Spinner';
 import shareIcon from '../assets/svg/shareIcon.svg';
-import { async } from '@firebase/util';
 
 function Listing() {
  const [listing, setListing] = useState(null);
@@ -85,9 +84,9 @@ function Listing() {
 
     {/* MAP */}
 
-    {auth.currentUser?.uid !== listing.userRef && (
+    {auth.currentUser?.uid !== listing.useRef && (
      <Link
-      to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`}
+      to={`/contact/${listing.useRef}?listingName=${listing.name}`}
       className='primaryButton'>
       Contact Landlord
      </Link>
